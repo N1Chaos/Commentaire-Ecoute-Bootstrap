@@ -104,11 +104,12 @@ textarea {
 /* Boutons */
 .btn-primary {
     background-color: var(--primary-color);
+    border: none;
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--button-hover-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -219,3 +220,21 @@ textarea {
     }
 }
 
+#selectedWordsDisplay {
+    max-height: 300px; /* ou ce que tu veux */
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    padding-bottom: 3rem; /* Espace pour que le bouton n’empiète pas */
+    margin-bottom: 1rem;
+}
+
+
+
+#selectedWordsDisplay::-webkit-scrollbar {
+    width: 6px;
+}
+
+#selectedWordsDisplay::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
