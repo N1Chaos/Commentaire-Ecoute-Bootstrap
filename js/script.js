@@ -1,6 +1,709 @@
 // Définir les définitions des mots
 const wordDefinitions = 
         {
+  // Émotions
+  "émouvant": { definition: "Qui provoque une émotion intense ou touchante." },
+  "envoûtant": { definition: "Qui charme et captive l’attention de manière presque magique." },
+  "angoissant": { definition: "Qui suscite une sensation de tension ou d’inquiétude." },
+  "joyeux": { definition: "Qui évoque l’allégresse et la bonne humeur." },
+  "nostalgique": { definition: "Qui fait naître des souvenirs doux-amers du passé." },
+  "mélancolique": { definition: "Triste et rêveur, chargé de douceur et de regrets." },
+  "apaisant": { definition: "Qui calme, qui procure du réconfort." },
+
+  // Caractère
+  "délicat": { definition: "Subtil, raffiné, exprimé avec finesse." },
+  "puissant": { definition: "Imposant, fort, marqué par l'intensité." },
+  "enjoué": { definition: "Gai, léger, rempli d’allégresse." },
+  "solennel": { definition: "Grave, sérieux, empreint de majesté." },
+  "majestueux": { definition: "Noble, imposant, inspirant le respect." },
+  "intime": { definition: "Personnel, réservé, chaleureux et discret." },
+  "dramatique": { definition: "Fortement expressif, souvent lié à des tensions ou conflits émotionnels." },
+
+  // Texture
+  "aérien": { definition: "Léger, flottant, presque immatériel." },
+  "dense": { definition: "Compact, riche, rempli de matière sonore." },
+  "cristallin": { definition: "Clair, limpide, éclatant comme du cristal." },
+  "velouté": { definition: "Doux au toucher, agréable et lisse à l’oreille." },
+  "rugueux": { definition: "Brut, avec des aspérités sonores." },
+  "fluide": { definition: "Continu, sans heurts, comme coulant naturellement." },
+  "granuleux": { definition: "Avec une texture sonore irrégulière ou grésillante." },
+
+  // Mouvement
+  "entraînant": { definition: "Qui incite au mouvement ou à la danse." },
+  "languissant": { definition: "Lent, mou, presque plaintif." },
+  "saccadé": { definition: "Interrompu, marqué par des arrêts nets." },
+  "ondulant": { definition: "Souple, aux variations douces comme des vagues." },
+  "frénétique": { definition: "Agité, rapide et intense." },
+  "mesuré": { definition: "Calme, régulier, structuré." },
+  "chaloupé": { definition: "Avec un balancement marqué, typique de certaines danses." },
+
+  // Timbre
+  "chaud": { definition: "Riche, rond, agréable à l’oreille." },
+  "métallique": { definition: "Brillant, résonant comme le métal." },
+  "boisé": { definition: "Rond, naturel, doux comme les sons des instruments en bois." },
+  "sourd": { definition: "Mat, étouffé, peu brillant." },
+  "éclatant": { definition: "Vif, brillant, frappant." },
+  "nasillard": { definition: "Ressemble à une voix nasale, pincée." },
+  "soyeux": { definition: "Doux et lisse, comme une texture fluide et raffinée." },
+
+  // Impression globale
+  "hypnotique": { definition: "Fascinant au point d’absorber totalement l’attention." },
+  "transcendant": { definition: "Qui dépasse le réel, spirituel ou extatique." },
+  "captivant": { definition: "Qui retient l’attention de manière forte." },
+  "enveloppant": { definition: "Qui entoure l’auditeur, immersif." },
+  "immersionnel": { definition: "Qui plonge l’auditeur dans un univers sonore complet." },
+  "évocateur": { definition: "Qui suggère des images, des idées ou des émotions." },
+  // Nuances de base
+  "pianissimo (pp)": {
+    definition: "Très doux, presque un murmure."
+  },
+  "piano (p)": {
+    definition: "Doux."
+  },
+  "mezzo piano (mp)": {
+    definition: "Modérément doux."
+  },
+  "mezzo forte (mf)": {
+    definition: "Modérément fort."
+  },
+  "forte (f)": {
+    definition: "Fort."
+  },
+  "fortissimo (ff)": {
+    definition: "Très fort."
+
+  },
+
+  // Nuances extrêmes
+  "pianississimo (ppp)": {
+    definition: "Extrêmement doux, à peine audible."
+  },
+  "fortississimo (fff)": {
+    definition: "Extrêmement fort, presque crié."
+  },
+  "sforzando (sfz)": {
+    definition: "Accentuation soudaine et forte d'une note ou d’un accord."
+  },
+  "rinforzando (rfz)": {
+    definition: "Renforcement progressif ou soudain d’un passage."
+  },
+  "forte-piano (fp)": {
+    definition: "Attaque forte suivie immédiatement d’un passage doux."
+
+  },
+
+  // Évolution progressive
+  "crescendo": {
+    definition: "Augmentation progressive du volume."
+  },
+  "decrescendo": {
+    definition: "Diminution progressive du volume."
+  },
+  "diminuendo": {
+    definition: "Synonyme de decrescendo."
+  },
+  "morendo": {
+    definition: "Mourant, diminuant jusqu’au silence."
+  },
+  "perdendosi": {
+    definition: "Se perdant, comme s’évanouissant progressivement."
+
+  },
+
+  // Accentuations
+  "accent": {
+    definition: "Mise en valeur d’une note par un jeu plus marqué."
+  },
+  "marcato": {
+    definition: "Bien marqué, avec une attaque nette."
+  },
+  "martelé": {
+    definition: "Très accentué, avec une articulation dure."
+  },
+  "staccato": {
+    definition: "Détaché, notes brèves et séparées."
+  },
+  "tenuto": {
+    definition: "Maintenu, avec une légère insistance."
+
+  },
+
+  // Effets dynamiques
+  "messa di voce": {
+    definition: "Effet vocal consistant à gonfler et diminuer progressivement le volume d’une même note."
+  },
+  "echo": {
+    definition: "Répétition atténuée d’une phrase ou d’un motif musical."
+  },
+  "subito": {
+    definition: "Soudain, généralement utilisé avec une nuance (ex : subito piano)."
+  },
+  "espressivo": {
+    definition: "Expressif, chargé d’émotion."
+  },
+  "con forza": {
+    definition: "Avec force ou intensité."
+
+  },
+
+  // Termes associés
+  "doux": {
+    definition: "Caractère tendre, peu intense."
+  },
+  "puissant": {
+    definition: "Caractère fort et imposant."
+  },
+  "léger": {
+    definition: "Joué avec finesse et délicatesse."
+  },
+  "lourd": {
+    definition: "Pesant, accentué, parfois lent."
+  },
+  "délicat": {
+    definition: "Subtil, fragile et soigné."
+  },
+  // Genres vocaux
+  "chanson": {
+    definition: "Pièce vocale souvent simple, avec paroles, populaire ou traditionnelle."
+  },
+  "lied": {
+    definition: "Chant allemand romantique pour voix et piano, sur un poème."
+  },
+  "mélodie": {
+    definition: "Chant artistique français avec accompagnement, équivalent du lied."
+  },
+  "aria": {
+    definition: "Air chanté par un soliste, souvent dans un opéra ou un oratorio."
+  },
+  "cantate": {
+    definition: "Œuvre vocale avec accompagnement instrumental, en plusieurs mouvements."
+  },
+  "oratorio": {
+    definition: "Grande composition dramatique sacrée pour solistes, chœur et orchestre."
+  },
+  "messe": {
+    definition: "Composition musicale reprenant les parties de la messe liturgique chrétienne."
+  },
+  "motet": {
+    definition: "Œuvre vocale sacrée polyphonique sans accompagnement instrumental (à l'origine).",
+
+  },
+
+  // Genres instrumentaux
+  "concerto": {
+    definition: "Œuvre pour soliste et orchestre, en trois mouvements souvent contrastés."
+  },
+  "sonate": {
+    definition: "Œuvre instrumentale structurée en plusieurs mouvements, souvent pour un ou deux instruments."
+  },
+  "symphonie": {
+    definition: "Grande composition orchestrale en plusieurs mouvements."
+  },
+  "prélude": {
+    definition: "Pièce courte souvent introductive ou autonome, au caractère libre."
+  },
+  "fugue": {
+    definition: "Pièce contrapuntique développant un thème par imitations successives."
+  },
+  "étude": {
+    definition: "Pièce visant à développer la technique d’un instrumentiste, parfois de concert."
+  },
+  "nocturne": {
+    definition: "Pièce expressive et lyrique, souvent pour piano, évoquant la nuit."
+  },
+  "ballade": {
+    definition: "Pièce lyrique, narrative ou poétique, souvent pour piano seul ou voix."
+
+  },
+
+  // Genres scéniques
+  "opéra": {
+    definition: "Œuvre dramatique chantée avec orchestre, mise en scène, costumes et décors."
+  },
+  "opérette": {
+    definition: "Forme légère d’opéra avec dialogues parlés, chansons et humour."
+  },
+  "ballet": {
+    definition: "Composition pour la danse, accompagnée d’un orchestre."
+  },
+  "comédie musicale": {
+    definition: "Spectacle mêlant chant, danse et théâtre, souvent populaire."
+  },
+  "drame musical": {
+    definition: "Forme d’opéra avec continuité dramatique et musicale plus intense, sans séparation nette entre les numéros."
+
+  },
+
+  // Musique de chambre
+  "quatuor à cordes": {
+    definition: "Formation de musique de chambre avec deux violons, un alto et un violoncelle."
+  },
+  "trio": {
+    definition: "Ensemble ou œuvre pour trois instruments ou voix."
+  },
+  "quintette": {
+    definition: "Ensemble ou œuvre pour cinq instruments ou voix."
+  },
+  "sonate en duo": {
+    definition: "Œuvre en deux parties pour deux instruments, souvent piano et un autre instrument mélodique."
+  },
+  "divertimento": {
+    definition: "Pièce légère et divertissante, souvent pour ensemble instrumental."
+
+  },
+
+  // Formes libres
+  "fantaisie": {
+    definition: "Pièce au caractère improvisé, libre dans la forme."
+  },
+  "impromptu": {
+    definition: "Pièce courte et spontanée, au style libre et expressif."
+  },
+  "rhapsodie": {
+    definition: "Composition libre inspirée de thèmes populaires ou folkloriques."
+  },
+  "toccata": {
+    definition: "Pièce virtuose pour clavier ou orgue, au style libre et rapide."
+  },
+  "variations": {
+    definition: "Œuvre fondée sur la transformation successive d’un même thème."
+
+  },
+
+  // Genres traditionnels
+  "suite": {
+    definition: "Enchaînement de danses instrumentales ou de mouvements contrastés."
+  },
+  "partita": {
+    definition: "Suite de pièces pour clavier ou instrument seul, apparentée à la suite."
+  },
+  "chaconne": {
+    definition: "Pièce construite sur une basse obstinée répétée."
+  },
+  "passacaille": {
+    definition: "Pièce fondée sur une basse répétée, proche de la chaconne."
+  },
+  "ricercare": {
+    definition: "Forme ancienne de fugue, à l’origine instrumentale et savante."
+},
+  // Éléments rythmiques
+  "pulsation": {
+    definition: "Battement régulier qui structure le temps dans la musique."
+  },
+  "tempo": {
+    definition: "Vitesse à laquelle la musique est jouée, mesurée en BPM (battements par minute)."
+  },
+  "mètre": {
+    definition: "Organisation des temps en mesures, représentée par une signature rythmique (ex. : 3/4, 4/4)."
+  },
+  "mesure": {
+    definition: "Groupe de temps délimité par des barres de mesure dans la notation musicale."
+  },
+  "battement": {
+    definition: "Unité de base du tempo, perçue comme une pulsation régulière."
+  },
+  "contretemps": {
+    definition: "Note ou accent rythmique placé entre les temps forts."
+
+  },
+
+  // Figures rythmiques
+  "noire": {
+    definition: "Figure de note d’une durée d’un temps en 4/4."
+  },
+  "croche": {
+    definition: "Figure de note valant la moitié d’une noire (1/2 temps en 4/4)."
+  },
+  "double-croche": {
+    definition: "Figure de note valant un quart de noire (1/4 temps en 4/4)."
+  },
+  "ronde": {
+    definition: "Figure de note valant quatre temps en 4/4."
+  },
+  "blanche": {
+    definition: "Figure de note valant deux temps en 4/4."
+  },
+  "soupir": {
+    definition: "Silence équivalent à un temps en 4/4 (durée d’une noire)."
+  },
+  "demi-soupir": {
+    definition: "Silence équivalent à une croche (1/2 temps en 4/4)."
+
+  },
+
+  // Techniques rythmiques
+  "syncope": {
+    definition: "Déplacement de l’accent rythmique sur un temps faible ou entre les temps."
+  },
+  "pointé": {
+    definition: "Rythme où une note est suivie d’un tiers de sa valeur (ex. : noire pointée = noire + croche)."
+  },
+  "triolet": {
+    definition: "Groupe de trois notes jouées dans le temps de deux (ex. : trois croches en une noire)."
+  },
+  "swing": {
+    definition: "Style rythmique avec des croches inégalement jouées pour donner un balancement."
+  },
+  "shuffle": {
+    definition: "Variante du swing avec un balancement plus marqué entre les notes d’un même temps."
+  },
+  "polyrythmie": {
+    definition: "Superposition de plusieurs rythmes différents joués simultanément."
+
+  },
+
+  // Styles rythmiques
+  "temps binaire": {
+    definition: "Structure rythmique où chaque temps est divisible par deux."
+  },
+  "temps ternaire": {
+    definition: "Structure rythmique où chaque temps est divisible par trois."
+  },
+  "quaternaire": {
+    definition: "Mesure à quatre temps, courante dans la musique occidentale (ex. : 4/4)."
+  },
+  "bossa-nova": {
+    definition: "Rythme syncopé issu de la musique brésilienne, souvent en 2/4 ou 4/4."
+  },
+  "samba": {
+    definition: "Style rythmique brésilien rapide et syncopé, souvent utilisé en danse."
+  },
+  "funk": {
+    definition: "Style musical et rythmique basé sur des grooves syncopés et percussifs."
+
+  },
+
+  // Termes spécifiques
+  "anacrouse": {
+    definition: "Note ou groupe de notes jouées avant le premier temps fort d’une phrase musicale (levée)."
+  },
+  "hémiole": {
+    definition: "Superposition de deux métriques différentes, souvent 3 contre 2."
+  },
+  "ostinato": {
+    definition: "Motif rythmique ou mélodique répété de façon continue dans une œuvre."
+  },
+  "rubato": {
+    definition: "Liberté expressive dans le rythme, où l’on accélère ou ralentit temporairement le tempo."
+  },
+  "agogique": {
+    definition: "Variations de tempo subtiles et expressives, non notées précisément."
+
+  },
+
+  // Notation
+  "chiffrage": {
+    definition: "Système de notation des accords ou des signatures rythmiques."
+  },
+  "barre de mesure": {
+    definition: "Barre verticale dans une portée qui délimite les mesures ou indique des répétitions."
+  },
+  "liaison": {
+    definition: "Courbe reliant deux notes de même hauteur (prolongation) ou deux notes différentes (interprétation liée)."
+  },
+  "point d'orgue": {
+    definition: "Symbole indiquant qu'une note ou un silence doit être tenu plus longtemps que sa valeur normale."
+  },
+  "mesure à blanc": {
+    definition: "Mesure sans contenu, souvent utilisée comme mesure d’introduction (levée) ou de respiration."
+},
+  // Indications de tempo
+  "largo": {
+    definition: "Très lent, solennel et large dans l’expression."
+  },
+  "adagio": {
+    definition: "Lent, mais légèrement plus rapide que largo, souvent expressif."
+  },
+  "andante": {
+    definition: "Allure modérée, correspondant à un pas tranquille."
+  },
+  "moderato": {
+    definition: "Tempo modéré, ni lent ni rapide."
+  },
+  "allegro": {
+    definition: "Rapide, vif et joyeux."
+  },
+  "presto": {
+    definition: "Très rapide, énergique."
+  },
+  "prestissimo": {
+    definition: "Le plus rapide possible, au-delà de presto."
+
+  },
+
+  // Modifications de tempo
+  "accelerando": {
+    definition: "Indication d’accélérer progressivement le tempo."
+  },
+  "ritardando": {
+    definition: "Indication de ralentir progressivement le tempo."
+  },
+  "rallentando": {
+    definition: "Similaire à ritardando, désigne un ralentissement progressif."
+  },
+  "rubato": {
+    definition: "Liberté rythmique prise par l’interprète en ralentissant ou accélérant légèrement certaines notes."
+  },
+  "a tempo": {
+    definition: "Reprise du tempo initial après une variation (ex. : rubato ou rallentando)."
+  },
+  "tempo primo": {
+    definition: "Retour au tout premier tempo indiqué dans l’œuvre."
+
+  },
+
+  // Mesures et battements
+  "battement": {
+    definition: "Unité rythmique perçue comme la pulsation régulière d’un morceau."
+  },
+  "métronome": {
+    definition: "Appareil qui indique un tempo précis en battant une pulsation régulière (exprimée en BPM)."
+  },
+  "pulsation": {
+    definition: "Battement régulier qui sous-tend le tempo d’une œuvre musicale."
+  },
+  "BPM": {
+    definition: "Battements Par Minute, unité de mesure du tempo."
+  },
+  "mesure": {
+    definition: "Unité rythmique contenant un certain nombre de temps, délimitée par des barres de mesure."
+
+  },
+
+  // Termes associés
+  "agogique": {
+    definition: "Nuances subtiles de tempo non indiquées explicitement mais utilisées pour exprimer la musique."
+  },
+  "alla breve": {
+    definition: "Mesure en deux temps rapides (2/2), équivalente à couper la mesure en deux par rapport à 4/4."
+  },
+  "lent": {
+    definition: "Indication générale pour jouer lentement."
+  },
+  "vif": {
+    definition: "Rapide et plein d’énergie."
+  },
+  "vivace": {
+    definition: "Très rapide et enjoué, plus rapide qu’allegro."
+  },
+  "tempo grave": {
+    definition: "Très lent et sérieux, avec un caractère solennel."
+
+  },
+
+  // Styles rythmiques
+  "syncope": {
+    definition: "Déplacement de l’accent rythmique sur un temps faible ou entre les temps."
+  },
+  "contretemps": {
+    definition: "Note jouée en dehors des temps forts, accentuant les temps faibles."
+  },
+  "swing": {
+    definition: "Style rythmique jazz caractérisé par une inégalité régulière des notes (temps faible légèrement retardé)."
+  },
+  "shuffle": {
+    definition: "Rythme basé sur des triolets où la première et la troisième note sont jouées, donnant un effet de balancement."
+  },
+  "pointé": {
+    definition: "Rythme utilisant des notes pointées, allongeant la durée d’une note de moitié (ex. : noire pointée suivie d’une croche)."
+  },
+  // Accords et intervalles
+  "accord": {
+    definition: "Ensemble de plusieurs sons joués simultanément."
+  },
+  "accord parfait": {
+    definition: "Accord composé d’une fondamentale, d’une tierce majeure ou mineure, et d’une quinte juste."
+  },
+  "arpège": {
+    definition: "Accord dont les notes sont jouées successivement au lieu d’être simultanées."
+  },
+  "consonance": {
+    definition: "Association de sons produisant une impression de stabilité ou d’harmonie."
+  },
+  "dissonance": {
+    definition: "Association de sons produisant une tension ou un effet de déséquilibre sonore."
+  },
+  "intervalle": {
+    definition: "Distance entre deux hauteurs (notes) en musique."
+  },
+  "renversement": {
+    definition: "Disposition d’un accord où une autre note que la fondamentale est à la basse."
+  },
+  "tierce": {
+    definition: "Intervalle de trois degrés entre deux notes (tierce majeure ou mineure)."
+  },
+  "quinte": {
+    definition: "Intervalle de cinq degrés, souvent utilisé comme fondement d’accords."
+
+  },
+
+  // Fonctions harmoniques
+  "cadence": {
+    definition: "Enchaînement d'accords marquant la fin ou une pause dans une phrase musicale."
+  },
+  "dominante": {
+    definition: "Cinquième degré de la gamme, avec une forte tendance à se résoudre sur la tonique."
+  },
+  "sous-dominante": {
+    definition: "Quatrième degré de la gamme, souvent utilisée pour préparer la dominante."
+  },
+  "tonique": {
+    definition: "Note principale ou centre tonal autour duquel s’organise l’harmonie."
+  },
+  "modulation": {
+    definition: "Changement de tonalité au cours d’un morceau."
+  },
+  "pivot": {
+    definition: "Accord ou note commune à deux tonalités, utilisé pour moduler."
+  },
+  "résolution": {
+    definition: "Passage d’un accord dissonant vers un accord consonant, établissant un repos harmonique."
+
+  },
+
+  // Types d'accords
+  "accord de septième": {
+    definition: "Accord comprenant une septième en plus de la triade (fondamentale, tierce, quinte)."
+  },
+  "accord diminué": {
+    definition: "Accord avec une tierce mineure et une quinte diminuée, créant une forte tension."
+  },
+  "accord augmenté": {
+    definition: "Accord avec une tierce majeure et une quinte augmentée, produisant une sonorité instable."
+  },
+  "accord suspendu": {
+    definition: "Accord où la tierce est remplacée par une seconde ou une quarte, créant une suspension."
+  },
+  "accord de neuvième": {
+    definition: "Accord de septième auquel on ajoute une neuvième (majeure ou mineure)."
+  },
+  "accord de sixte": {
+    definition: "Accord où une sixte remplace ou complète la quinte, ou une note à la sixte de la basse."
+
+  },
+
+  // Progressions
+  "cycle des quintes": {
+    definition: "Ordre des tonalités majeures ou mineures séparées par des intervalles de quinte."
+  },
+  "progression": {
+    definition: "Suite d’accords liée par des relations harmoniques logiques ou stylistiques."
+  },
+  "mouvement harmonique": {
+    definition: "Évolution ou changement des accords dans le temps."
+  },
+  "enchaînement": {
+    definition: "Passage d’un accord à un autre, selon des règles harmoniques établies."
+
+  },
+
+  // Techniques
+  "contrepoint": {
+    definition: "Technique d’écriture combinant plusieurs lignes mélodiques indépendantes."
+  },
+  "harmonisation": {
+    definition: "Ajout d’accords à une mélodie pour créer une texture harmonique."
+  },
+  "voicing": {
+    definition: "Disposition des notes d’un accord entre les différentes voix ou instruments."
+  },
+  "doublure": {
+    definition: "Répétition d’une même note ou mélodie à l’unisson ou à l’octave dans une autre voix."
+  },
+  "pédale": {
+    definition: "Note tenue ou répétée pendant que les accords changent autour d’elle."
+
+  },
+
+  // Concepts avancés
+  "harmonie modale": {
+    definition: "Utilisation des modes (dorien, phrygien, etc.) comme base harmonique au lieu des gammes majeures ou mineures."
+  },
+  "polytonalité": {
+    definition: "Superposition de deux ou plusieurs tonalités différentes jouées simultanément."
+  },
+  "cluster": {
+    definition: "Accord composé de notes très proches (souvent à demi-tons) créant une forte dissonance."
+  },
+  "quartal": {
+    definition: "Harmonie construite à partir d’intervalles de quarte."
+  },
+  "quintal": {
+    definition: "Harmonie basée sur des intervalles de quinte."
+  },
+  // Formations vocales
+  "solo vocal": {
+    definition: "Performance d’un seul chanteur sans accompagnement vocal d’autres personnes."
+  },
+  "duo vocal": {
+    definition: "Ensemble de deux chanteurs interprétant une œuvre vocale ensemble."
+  },
+  "trio vocal": {
+    definition: "Ensemble de trois chanteurs chantant simultanément ou en alternance."
+  },
+  "quatuor vocal": {
+    definition: "Groupe de quatre chanteurs, souvent avec une répartition typique des voix (soprano, alto, ténor, basse)."
+  },
+  "chœur": {
+    definition: "Groupe de chanteurs interprétant ensemble une œuvre polyphonique."
+  },
+  "chœur mixte": {
+    definition: "Chœur composé de voix masculines et féminines (soprano, alto, ténor, basse)."
+  },
+  "chœur d'hommes": {
+    definition: "Chœur composé exclusivement de voix masculines (ténors, barytons, basses)."
+  },
+  "chœur de femmes": {
+    definition: "Chœur composé uniquement de voix féminines (sopranos, mezzo-sopranos, altos)."
+  },
+  "chœur d'enfants": {
+    definition: "Chœur composé d’enfants, généralement avec des voix aiguës et claires."
+
+  },
+
+  // Formations instrumentales
+  "solo instrumental": {
+    definition: "Performance d’un seul instrumentiste jouant seul ou avec accompagnement."
+  },
+  "duo instrumental": {
+    definition: "Ensemble de deux instrumentistes."
+  },
+  "trio instrumental": {
+    definition: "Ensemble de trois instrumentistes jouant une œuvre de musique de chambre."
+  },
+  "quatuor instrumental": {
+    definition: "Groupe de quatre musiciens, souvent à cordes (2 violons, 1 alto, 1 violoncelle)."
+  },
+  "quintette": {
+    definition: "Ensemble de cinq musiciens, pouvant varier selon les instruments (vents, cordes, etc.)."
+  },
+  "ensemble": {
+    definition: "Petit groupe d’instrumentistes jouant ensemble, sans effectif fixe."
+  },
+  "orchestre": {
+    definition: "Grand groupe instrumental, souvent composé de cordes, bois, cuivres et percussions."
+  },
+  "orchestre symphonique": {
+    definition: "Orchestre de grande taille interprétant des œuvres symphoniques, avec toutes les familles d’instruments."
+  },
+  "orchestre de chambre": {
+    definition: "Orchestre plus réduit que le symphonique, souvent utilisé pour la musique de chambre."
+
+  },
+
+  // Formations mixtes
+  "voix et instrument": {
+    definition: "Association d’une ou plusieurs voix avec un ou plusieurs instruments (ex. : chant et piano)."
+  },
+  "voix et ensemble": {
+    definition: "Voix ou groupe vocal accompagné par un petit ensemble instrumental."
+  },
+  "voix et orchestre": {
+    definition: "Voix ou chœur accompagné par un orchestre complet."
+  },
+  "chœur et orchestre": {
+    definition: "Formation réunissant un chœur et un orchestre, souvent pour des œuvres oratorios, cantates ou messes."
+  },
             
                 "latin": {
                   "definition": "Langue indo-européenne de l'Antiquité parlée à Rome et en Italie, à l'origine des langues romanes modernes et utilisée longtemps comme langue savante en Europe."
