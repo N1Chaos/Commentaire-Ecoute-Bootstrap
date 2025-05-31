@@ -185,40 +185,7 @@ textarea {
     background-color: #ff0000;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-    }
-    
-    .col-md-2, .col-md-10 {
-        width: 100% !important;
-    }
-    
-    .cadre-gauche, .cadre-mots {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
 
-@media (max-width: 1024px) and (orientation: portrait) {
-    html {
-        transform: rotate(90deg);
-        transform-origin: left top;
-        width: 100vh;
-        height: 100vw;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-    
-    body {
-        width: 100vh;
-        height: 100vw;
-        overflow: hidden;
-    }
-}
 
 #selectedWordsDisplay {
     max-height: 300px; /* ou ce que tu veux */
@@ -254,4 +221,19 @@ textarea {
 .nav-col::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 5px;
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+    #landscapeNotice {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+
+    body {
+        padding-top: 60px; /* espace pour ne pas masquer le haut du contenu */
+    }
 }
